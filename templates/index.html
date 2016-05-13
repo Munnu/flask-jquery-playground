@@ -16,7 +16,7 @@
 
             // assemble a bunch of parameters for the json endpoint (in flask)
             var url = '/info.json?lat=' + INFO.latitude + "&lng=" + INFO.longitude;
-            $.get(url, getInfo); 
+            $.get(url, getInfo); // pass the values into the flask json endpoint
             // console.log(INFO);  
             // alert(); 
          };
