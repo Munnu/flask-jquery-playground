@@ -20,13 +20,14 @@
             // console.log(INFO);  
             // alert(); 
          };
+         // $("#submit-route").on('click', showInfo);
      </script>
 </head>
 <body>
-    <form action="\" id="our_form">
+    <form action="\" id="our-form">
         <input type="text" id="start-latitude" name="start_lat" placeholder="start latitude">
         <input type="text" id="start-longitude"" name="start_lng" placeholder="start longitude">
-        <button onclick="showInfo(event)">Route Me</button>
+        <button id="submit-route" onclick="showInfo(event)">Route Me</button>
     </form>
 
     <div id="get-info"></div>
