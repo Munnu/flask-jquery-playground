@@ -1,0 +1,34 @@
+<html>
+<head>
+    <title>Flask Playground</title>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script type="text/javascript">
+        INFO = {};
+        var getInfo = function(results) {
+            console.log("This is inside of getInfo " + results.lat + " " + results.lng);
+            $('#get-info').html(results.lat + " " + results.lng);
+        }
+
+        var showInfo =  function(event){
+            event.preventDefault(); // need this to prevent GET on form submit refresh
+            INFO.latitude = document.getElementById('start-latitude').value;
+            INFO.longitude = document.getElementById('start-longitude').value;
+
+            // assemble a bunch of parameters for the json endpoint (in flask)
+            var url = '/info.json?lat=' + INFO.latitude + "&lng=" + INFO.longitude;
+            $.get(url, getInfo); 
+            // console.log(INFO);  
+            // alert(); 
+         };
+     </script>
+</head>
+<body>
+    <form action="\" id="our_form">
+        <input type="text" id="start-latitude" name="start_lat" placeholder="start latitude">
+        <input type="text" id="start-longitude"" name="start_lng" placeholder="start longitude">
+        <button onclick="showInfo(event)">Route Me</button>
+    </form>
+
+    <div id="get-info"></div>
+</body>
+</html>
