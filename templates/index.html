@@ -5,6 +5,7 @@
     <script type="text/javascript">
         INFO = {};
         var getInfo = function(results) {
+            console.log("This is results", results);
             console.log("This is inside of getInfo " + results.lat + " " + results.lng);
             $('#get-info').html(results.lat + " " + results.lng);
         }
